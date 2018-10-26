@@ -1,0 +1,157 @@
+*{
+	font-size: 6vmin;
+	padding: 0;
+	margin: 0;
+	user-select:none;
+    font-family: sans-serif;
+}
+
+#canvas{
+	width: 100vw;
+	height: 100vh;
+	background-color: #ddd;
+}
+#add_button{
+	font-size: 10vmin;
+	width: 12vmin;
+	height: 12vmin;
+	background-color: #06f;
+	border-radius: 6vmin;
+	border-color: #03c;
+	border-width: 0.5vmin;
+	display: block;
+	color: #fff;
+	position: fixed;
+	right:2vmin;
+	bottom: 2vmin;
+	text-align:center;
+    line-height:12vmin;
+	vertical-align:middle;
+	box-shadow: 0vmin 0vmin 0.8vmin 0.8vmin #aaa;
+}
+#list_table{
+	border-radius: 1vmin;
+	font-size: 2vmin;
+	width: 80vmin;
+	height: 60vmin;
+	background-color: #fff;
+	border-color: #06f;
+	border-width: 0.5vmin;
+	color: #fff;
+	position: fixed;
+	right: 15vmin;
+	bottom: 15vmin;
+	visibility: hidden;
+	overflow-x:hidden;
+	overflow-y:scroll;
+	box-shadow: 0.5vmin 0.5vmin 0.5vmin 0.5vmin #aaa;
+}
+
+#list_table dt{
+	height: 7vmin;
+	width: 100%
+	border-bottom: 1px solid #ccc;
+	box-shadow: 0vmin -0.1vmin 0 0.1px #ccc inset;
+}
+#list_add{
+	background-color: #6f0;
+	width: 20vmin;
+	height: 6vmin;
+	border-radius: 3vmin;
+	border-style: none;
+	display: block;
+	margin: 0.5vmin auto;
+    text-align: center;
+	line-height: 6vmin;
+	color: #fff;
+	box-shadow: 0.2vmin 0.2vmin 0 0.2vmin #3c0;
+}
+#list_add:focus{
+	box-shadow: 0vmin 0vmin 0 0.2vmin #3c0;;
+}
+
+
+.listDd{
+	width: 50%;
+	height: 6vmin;
+	border-bottom: 1px solid #ccc;
+	color: #06f;
+	font-size: 3vmin;
+	line-height:6vmin;
+	text-align: center;
+	float: left;
+}
+
+.Stick{
+	/*padding: 1vmin;*/
+	width: 50vw;
+	height: 12.5vh;
+	float: left;
+	position: relative;
+	background-color: #fff;
+	border-radius: 0.1vmin;
+	text-align:center;
+	line-height:12.5vh;
+	font-size: 6vmin;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+	color: #c03;
+	box-shadow:-0.2vmin -0.2vmin 0vmin 0.3vmin #c03 inset,0.3vmin 0.3vmin 0.3vmin 0.3vmin #aaa;
+}
+.Stick:hover>.StickButton{
+	visibility: visible;
+}
+.Stick:focus>.StickButton{
+	visibility: visible;
+}
+
+.StickText{
+	font-size: 10vmin;
+	color: #c03;
+}
+
+.StickButton{
+	width: 6vh;
+	height: 6vh;
+	background: #f06;
+	border-radius: 3vh;
+	border-color: #c03;
+    border-width: 0.5vmin;
+	color: #fff;
+	position: absolute;
+	right: 1vmin;
+	top: 3.25vh; 
+	font-size: 4vmin;
+	visibility: hidden;
+	font-weight: bolder;
+}
+
+.TextInput{
+	user-select:unset;
+	position: fixed;
+	width: 60vw;
+	height: 10vh;
+	border-radius: 2.5vh;
+	background-color: #eee;
+	border-width: 0;
+	left: 20vw;
+	top: 45vh;
+	color: #fff;
+	box-shadow: 0 0 0 0.5vmin #0c3 inset;
+}
+#foot{
+	width: 100vw;
+	height: 0.1vmin;
+	font-size: 1vmin;
+	color: #666;
+	text-align: center;
+	line-height: 1vmin;
+	vertical-align: middle;
+	position: fixed;
+	bottom: 2vmin;
+}
+#foot i{
+	font-size: 1vmin;
+	font-style: italic;
+}
