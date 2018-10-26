@@ -1,7 +1,7 @@
 //默认选项添加在此处
 var default_data = [
 	"跑道使用 08","跑道使用 26",
-	"HKAPP:119.15mHz","HKAPP:123.85mHz",
+	"HKAPP:119.15mHz","HKAPP:120.025.mHz",
 	"SYTWR:118.15mHz","SYTWR:118.85mHz",
 	"ACC1:122.9mHz","ACC1:120.5mHz",
 	"ACC2:122.6mHz","ACC2:130.2mHz",
