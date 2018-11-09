@@ -12,6 +12,7 @@ var default_data = [
 ];
 var list_tab = document.getElementById("list_table");
 var list_flag = false;
+var list_stick = new Array();
 
 window.onload = function () {
 	document.body.addEventListener('touchstart', function () {return});
@@ -46,7 +47,6 @@ function newStick(even) {
 }
 
 function Stick(txt) {
-	console.log(txt.length);
 	// create div
 	var new_div = document.createElement('div');
 	new_div.className = "Stick";
@@ -65,6 +65,9 @@ function Stick(txt) {
 	var canvas = document.getElementById('canvas');
 	canvas.appendChild(new_div);
 	showTaggle();
+	// 添加拖拽函数
+	drag(new_div);
+	new_div.draggable = "true";
 }
 
 function closeBox(even) {
