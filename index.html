@@ -24,4 +24,12 @@
 </body>
 <script src="main.js" type="text/JavaScript"></script>
 <script src="drag.js" type="text/JavaScript"></script>
+<script src="mobile.min.js"></script>
+<script src="scroll-behaviour.min.js"></script>
+<script>
+    MobileDragDrop.polyfill({
+        // use this to make use of the scroll behaviour
+        dragImageTranslateOverride: MobileDragDrop.scrollBehaviourDragImageTranslateOverride
+    });
+</script>
 </html>
