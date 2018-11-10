@@ -29,6 +29,26 @@
     line-height:12vmin;
 	vertical-align:middle;
 	box-shadow: 0vmin 0vmin 0.8vmin 0.8vmin #aaa;
+	z-index: 500;
+}
+
+#recycle{
+	font-size: 10vmin;
+	width: 30vmin;
+	height: 30vmin;
+	background-color: #f60;
+	border-radius: 15vmin;
+	border-color: #c30;
+	border-width: 0vmin;
+	color: #fff;
+	position: fixed;
+	right: -8vmin;
+	bottom: -8vmin;
+	text-align: center;
+	line-height:30vmin;
+	vertical-align:middle;
+	box-shadow: 0vmin 0vmin 1vmin 1vmin #aaa;
+	z-index: 1000;
 }
 #list_table{
 	border-radius: 1vmin;
