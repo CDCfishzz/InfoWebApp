@@ -47,6 +47,9 @@ function newStick(even) {
 }
 
 function Stick(txt) {
+	showTaggle();
+	var canvas = document.getElementById('canvas');
+	if (canvas.childNodes.length >= 16) {return ;}
 	// create div
 	var new_div = document.createElement('div');
 	new_div.className = "Stick";
@@ -62,9 +65,7 @@ function Stick(txt) {
 	new_div.appendChild(new_text);
 	new_div.appendChild(new_del_button);
 
-	var canvas = document.getElementById('canvas');
 	canvas.appendChild(new_div);
-	showTaggle();
 	// 添加拖拽函数
 	drag(new_div);
 	new_div.draggable = "true";
