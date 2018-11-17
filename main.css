@@ -5,6 +5,9 @@
 	user-select:none;
     font-family: sans-serif;
 }
+button,input{
+	outline: none;
+}
 
 #canvas{
 	width: 100vw;
