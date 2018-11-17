@@ -72,7 +72,7 @@
 	right: 15vmin;
 	bottom: 15vmin;
 	visibility: hidden;
-	overflow-x:hidden;
+	/*overflow-x:hidden;*/
 	overflow-y:scroll;
 	box-shadow: 0.5vmin 0.5vmin 0.5vmin 0.5vmin #aaa;
 }
@@ -97,7 +97,7 @@
 	box-shadow: 0.2vmin 0.2vmin 0 0.2vmin #3c0;
 }
 #list_add:focus{
-	box-shadow: 0vmin 0vmin 0 0.2vmin #3c0;;
+	box-shadow: 0vmin 0vmin 0 0.2vmin #3c0;
 }
 
 
@@ -160,14 +160,14 @@
 .TextInput{
 	user-select:unset;
 	position: fixed;
-	width: 60vw;
+	width: 80vw;
 	height: 10vh;
 	border-radius: 2.5vh;
 	background-color: #eee;
 	border-width: 0;
-	left: 20vw;
+	left: 10vw;
 	top: 45vh;
-	color: #fff;
+	color: #669;
 	box-shadow: 0 0 0 0.5vmin #0c3 inset;
 }
 #foot{
