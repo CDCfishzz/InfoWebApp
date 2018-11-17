@@ -26,7 +26,7 @@
 	right:2vmin;
 	bottom: 2vmin;
 	text-align:center;
-    /*line-height:0vmin;*/
+    line-height:0vmin;
 	vertical-align:middle;
 	box-shadow: 0vmin 0vmin 0.8vmin 0.8vmin #aaa;
 	z-index: 500;
