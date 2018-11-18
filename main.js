@@ -62,7 +62,7 @@ function Stick(txt) {
 	// create delete
 	var new_del_button = document.createElement('button');
 	new_del_button.className = "StickButton";
-	new_del_button.innerHTML = 'X';
+	new_del_button.innerHTML = '&times';
 	new_del_button.addEventListener('click',closeBox,false);
 
 	new_div.appendChild(new_text);

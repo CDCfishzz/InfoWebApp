@@ -3,7 +3,6 @@
 	padding: 0;
 	margin: 0;
 	user-select:none;
-    font-family: sans-serif;
     outline: none;
 }
 
@@ -13,9 +12,11 @@
 	background-color: #ddd;
 }
 #add_button{
-	font-size: 10vmin;
 	width: 12vmin;
 	height: 12vmin;
+	line-height:11vmin;
+	font-size: 10vmin;
+	text-align:center;
 	background-color: #06f;
 	border-radius: 6vmin;
 	border-color: #03c;
@@ -25,9 +26,6 @@
 	position: fixed;
 	right:2vmin;
 	bottom: 2vmin;
-	text-align:center;
-    line-height:0vmin;
-	vertical-align:middle;
 	box-shadow: 0vmin 0vmin 0.8vmin 0.8vmin #aaa;
 	z-index: 500;
 }
@@ -140,8 +138,12 @@
 }
 
 .StickButton{
-	width: 6vh;
-	height: 6vh;
+	display: block;
+	width: 6vmin;
+	height: 6vmin;
+	font-size: 5vmin;
+	line-height: 5vmin;
+	text-align: center;
 	background: #f06;
 	border-radius: 3vh;
 	border-color: #c03;
@@ -150,7 +152,6 @@
 	position: absolute;
 	right: 1vmin;
 	top: 3.25vh;
-	font-size: 4vmin;
 	visibility: hidden;
 	font-weight: bolder;
 }
