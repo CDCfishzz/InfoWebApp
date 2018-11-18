@@ -16,9 +16,9 @@ var list_stick = new Array();
 
 window.onload = function () {
 	document.body.addEventListener('touchstart', function () {return});
-	document.body.addEventListener('touchmove',function () {
-		event.preventDefault();
-	},{passive:false})
+	document.getElementById('canvas').addEventListener('touchmove',function (e) {
+		e.preventDefault();
+	},{capture: false,passive: false});
 	document.getElementById('add_button').addEventListener('click',showTaggle,false);
 	document.getElementById('list_add').addEventListener('click',addNew,false);
 	// add list

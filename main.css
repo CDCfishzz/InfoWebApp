@@ -4,16 +4,13 @@
 	margin: 0;
 	user-select:none;
     font-family: sans-serif;
-}
-button,input{
-	outline: none;
+    outline: none;
 }
 
 #canvas{
 	width: 100vw;
 	height: 100vh;
 	background-color: #ddd;
-	/*position: relative;*/
 }
 #add_button{
 	font-size: 10vmin;
@@ -75,7 +72,6 @@ button,input{
 	right: 15vmin;
 	bottom: 15vmin;
 	visibility: hidden;
-	/*overflow-x:hidden;*/
 	overflow-y:scroll;
 	box-shadow: 0.5vmin 0.5vmin 0.5vmin 0.5vmin #aaa;
 }
@@ -116,7 +112,6 @@ button,input{
 }
 
 .Stick{
-	/*padding: 1vmin;*/
 	width: 50vw;
 	height: 12.5vh;
 	float: left;
@@ -154,7 +149,7 @@ button,input{
 	color: #fff;
 	position: absolute;
 	right: 1vmin;
-	top: 3.25vh; 
+	top: 3.25vh;
 	font-size: 4vmin;
 	visibility: hidden;
 	font-weight: bolder;
@@ -183,6 +178,7 @@ button,input{
 	vertical-align: middle;
 	position: fixed;
 	bottom: 2vmin;
+	z-index: 100;
 }
 #foot i{
 	font-size: 1vmin;
