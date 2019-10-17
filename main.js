@@ -19,7 +19,7 @@ window.onload = function () {
 	document.getElementById('canvas').addEventListener('touchmove',function (e) {
 		e.preventDefault();
 	},{capture: false,passive: false});
-	document.getElementById('add_button').addEventListener('click',showTaggle,false);
+	document.getElementById('add_button').addEventListener('click',listTaggle,false);
 	document.getElementById('list_add').addEventListener('click',addNew,false);
 	// add list
 	for (var i = 0; i < default_data.length; i++) {
@@ -32,9 +32,10 @@ window.onload = function () {
 		list_tab.appendChild(new_dd);
 
 	}
+	// storage read to show >>
 }
 
-function showTaggle() {
+function listTaggle() {
 	// taggle show
 	if (list_flag) {
 		list_tab.style.visibility = 'hidden';
@@ -47,10 +48,12 @@ function showTaggle() {
 function newStick(even) {
 	text = even.target.innerHTML;
 	Stick(text);
+	//  storage add >>
+
 }
 
 function Stick(txt) {
-	showTaggle();
+	listTaggle();
 	var canvas = document.getElementById('canvas');
 	if (canvas.childNodes.length >= 16) {return ;}
 	// create div
@@ -77,6 +80,7 @@ function Stick(txt) {
 function closeBox(even) {
 	target = even.target.parentNode;
 	target.parentNode.removeChild(target);
+	// storage remove >>
 }
 
 function addNew() {
