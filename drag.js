@@ -14,19 +14,38 @@ function drag(obj) {
 	obj.addEventListener('dragend', function (ev) {
 		ev.target.style.backgroundColor = '#fff';
 		ev.preventDefault();
+
+		// exchange both postion
+		if (enterElement) {
+			tamp = this.cloneNode(true);
+			this.parentNode.insertBefore(tamp, this);
+			this.parentNode.insertBefore(this, enterElement);
+			this.parentNode.replaceChild(enterElement, tamp);
+			tamp = null;
+		}
+		enterElement = null;
+		dragElement = null; 
+
+		// storage change >>
+
 	}, false)
 
 	obj.addEventListener('dragenter', function (ev) {
 		nextchild = this.nextElementSibling || this.nextSilbing;
 		lastchild = this.parentNode.lastElementChild || this.parentNode.lastChild;
-		if (Idx(dragElement) > Idx(this)) {
-			this.parentNode.insertBefore(dragElement, this);
-		}else{
-			this.parentNode.insertBefore(dragElement, nextchild);
-		}
-		if (lastchild == this) {
-			this.parentNode.appendChild(dragElement);
-		}
+		
+		enterElement = this;
+
+		// if (Idx(dragElement) > Idx(this)) {
+		// 	this.parentNode.insertBefore(dragElement, this);
+		// }else{
+		// 	this.parentNode.insertBefore(dragElement, nextchild);
+		// }
+		// if (lastchild == this) {
+		// 	this.parentNode.appendChild(dragElement);
+		// }
+
+
 	}, false)
 
 	// obj.addEventListener('dragleave', function (ev) {
