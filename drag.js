@@ -22,9 +22,11 @@ function drag(obj) {
 			this.parentNode.insertBefore(this, enterElement);
 			this.parentNode.replaceChild(enterElement, tamp);
 			tamp = null;
+
+			// storage change
+			storageChange(this.parentNode.childNodes);
 		}
 		
-		// storage change >>
 
 		enterElement = null;
 		dragElement = null; 

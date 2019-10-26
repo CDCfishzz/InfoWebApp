@@ -11,6 +11,7 @@ var default_data = [
 	"分流程序","通航活动","炮射活动","V41可用"
 ];
 var list_tab = document.getElementById("list_table");
+var add_btn = document.getElementById('add_button');
 var list_flag = false;
 var list_stick = new Array();
 
@@ -19,7 +20,7 @@ window.onload = function () {
 	document.getElementById('canvas').addEventListener('touchmove',function (e) {
 		e.preventDefault();
 	},{capture: false,passive: false});
-	document.getElementById('add_button').addEventListener('click',listTaggle,false);
+	add_btn.addEventListener('click',listTaggle,false);
 	document.getElementById('list_add').addEventListener('click',addNew,false);
 	// add list
 	for (var i = 0; i < default_data.length; i++) {
@@ -32,15 +33,39 @@ window.onload = function () {
 		list_tab.appendChild(new_dd);
 
 	}
-	// storage read to show >>
+	
+	// storage show
+	storageShow();
+}
+
+function storageShow() {
+	for (var i = 0; i < localStorage.length; i++) {
+		txt_of_local = localStorage.getItem(i);
+		Stick(txt_of_local);
+	}
+}
+
+function storageAdd(txt) {
+	key = canvas.childNodes.length - 1;
+	localStorage.setItem(key, txt);
+}
+
+function storageChange(childs) {
+	localStorage.clear();
+	for (var i = 0; i < childs.length; i++) {
+		localStorage.setItem(i, childs[i].firstChild.data);
+	}
 }
 
 function listTaggle() {
 	// taggle show
+
 	if (list_flag) {
 		list_tab.style.visibility = 'hidden';
+		// add_btn.classList.remove("list_onShow");
 	} else {
 		list_tab.style.visibility = 'visible';
+		// add_btn.classList.add("list_onShow");
 	}
 	list_flag = !list_flag;
 }
@@ -48,12 +73,14 @@ function listTaggle() {
 function newStick(even) {
 	text = even.target.innerHTML;
 	Stick(text);
-	//  storage add >>
+	listTaggle();
+	
+	//  storage add
+	storageAdd(text);
 
 }
 
 function Stick(txt) {
-	listTaggle();
 	var canvas = document.getElementById('canvas');
 	if (canvas.childNodes.length >= 16) {return ;}
 	// create div
@@ -79,8 +106,13 @@ function Stick(txt) {
 
 function closeBox(even) {
 	target = even.target.parentNode;
+	parent = target.parentNode;
+
 	target.parentNode.removeChild(target);
-	// storage remove >>
+
+	// storage remove
+	storageChange(parent.childNodes);
+
 }
 
 function addNew() {
@@ -113,6 +145,10 @@ function focusInput(even) {
 		if (event.keyCode == 13) {
 			Stick(even.target.value);
 			blurInput(even.target);
+			listTaggle();
+
+			// storage add
+			storageAdd(even.target.value);
 		}
 	},false);
 }
