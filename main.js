@@ -1,16 +1,17 @@
 //默认选项添加在此处
 var default_data = [
 	"跑道使用 08","跑道使用 26",
-	"HKAPP:119.15mHz","HKAPP:120.025.mHz",
-	"SYTWR:118.15mHz","SYTWR:118.85mHz",
-	"ACC1:122.9mHz","ACC1:120.5mHz",
-	"ACC2:122.6mHz","ACC2:130.2mHz",
-	"BAO:118.025mHz","BAO:130.00mHz",
 	"移交:5700M/6000M","移交:6900M/7200M",
-	"加来开飞","加来一等","乐东开飞","乐东一等","陵水开飞","陵水一等","关厢开飞",
+	"HKAPP:119.15MHz","HKAPP:120.025MHz",
+	"SYTWR:118.15MHz","SYTWR:118.85MHz",
+	"ACC1:122.9MHz","ACC1:120.5MHz",
+	"ACC2:122.6MHz","ACC2:130.2MHz",
+	"BAO:118.025MHz","BAO:130.00MHz",
+	"JL开飞","JL一等","LD开飞","LD一等","LS开飞","LS一等","GX开飞",
 	"分流程序","通航活动","炮射活动","V41可用"
 ];
 var list_tab = document.getElementById("list_table");
+var add_btn = document.getElementById('add_button');
 var list_flag = false;
 var list_stick = new Array();
 
@@ -19,7 +20,7 @@ window.onload = function () {
 	document.getElementById('canvas').addEventListener('touchmove',function (e) {
 		e.preventDefault();
 	},{capture: false,passive: false});
-	document.getElementById('add_button').addEventListener('click',showTaggle,false);
+	add_btn.addEventListener('click',listTaggle,false);
 	document.getElementById('list_add').addEventListener('click',addNew,false);
 	// add list
 	for (var i = 0; i < default_data.length; i++) {
@@ -32,14 +33,39 @@ window.onload = function () {
 		list_tab.appendChild(new_dd);
 
 	}
+
+	// storage show
+	storageShow();
 }
 
-function showTaggle() {
+function storageShow() {
+	for (var i = 0; i < localStorage.length; i++) {
+		txt_of_local = localStorage.getItem(i);
+		Stick(txt_of_local);
+	}
+}
+
+function storageAdd(txt) {
+	key = canvas.childNodes.length - 1;
+	localStorage.setItem(key, txt);
+}
+
+function storageChange(childs) {
+	localStorage.clear();
+	for (var i = 0; i < childs.length; i++) {
+		localStorage.setItem(i, childs[i].firstChild.data);
+	}
+}
+
+function listTaggle() {
 	// taggle show
+
 	if (list_flag) {
 		list_tab.style.visibility = 'hidden';
+		// add_btn.classList.remove("list_onShow");
 	} else {
 		list_tab.style.visibility = 'visible';
+		// add_btn.classList.add("list_onShow");
 	}
 	list_flag = !list_flag;
 }
@@ -47,10 +73,14 @@ function showTaggle() {
 function newStick(even) {
 	text = even.target.innerHTML;
 	Stick(text);
+	listTaggle();
+
+	//  storage add
+	storageAdd(text);
+
 }
 
 function Stick(txt) {
-	showTaggle();
 	var canvas = document.getElementById('canvas');
 	if (canvas.childNodes.length >= 16) {return ;}
 	// create div
@@ -62,7 +92,7 @@ function Stick(txt) {
 	// create delete
 	var new_del_button = document.createElement('button');
 	new_del_button.className = "StickButton";
-	new_del_button.innerHTML = '&times';
+	new_del_button.innerHTML = '×';
 	new_del_button.addEventListener('click',closeBox,false);
 
 	new_div.appendChild(new_text);
@@ -76,7 +106,13 @@ function Stick(txt) {
 
 function closeBox(even) {
 	target = even.target.parentNode;
+	parent = target.parentNode;
+
 	target.parentNode.removeChild(target);
+
+	// storage remove
+	storageChange(parent.childNodes);
+
 }
 
 function addNew() {
@@ -109,6 +145,10 @@ function focusInput(even) {
 		if (event.keyCode == 13) {
 			Stick(even.target.value);
 			blurInput(even.target);
+			listTaggle();
+
+			// storage add
+			storageAdd(even.target.value);
 		}
 	},false);
 }
