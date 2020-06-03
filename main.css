@@ -29,7 +29,21 @@
 	box-shadow: 0vmin 0vmin 0.8vmin 0.8vmin #aaa;
 	z-index: 500;
 }
+/*add animation*/
+/*#add_button:hover{
+	animation: ro 1s linear 1 both;
+}
+@keyframes ro{
+	0%{
+		transform: rotate(0deg);
+	}
+	100%{
+		transform: rotate(180deg);
+	}
+}*/
 
+
+/*maybe #recycle is useless*/
 #recycle{
 	font-size: 5vmin;
 	width: 30vmin;
@@ -118,7 +132,7 @@
 	border-radius: 0.1vmin;
 	text-align:center;
 	line-height:12.5vh;
-	font-size: 6vmin;
+	font-size: 10vmin;
 	overflow:hidden;
 	text-overflow:ellipsis;
 	white-space:nowrap;
